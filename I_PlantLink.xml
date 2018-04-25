@@ -3,20 +3,7 @@
   <functions>
 	local PLUGIN_VERSION = "1.71"
 	PL = {}
-	PL.libpath = "/usr/lib/lua/"
-	PL.jsonlua = PL.libpath .. "json.lua"
-	
-	function CheckForJSONParser()
-		local result = os.execute("/bin/ls " .. PL.jsonlua)
-		
-		luup.log("Checking for JSON Parser")
-		luup.log(result)
-
-		if (result ~= 0) then
-			local location = "http://code.mios.com/trac/mios_google_calendar_ii_plugin/raw-attachment/wiki/WikiStart/json.lua"
-			result = getfile(PL.jsonlua,location)
-    		end
-    	end
+	PL.jsonlua = "dkjson.lua"
 
 	Creds = nil
 	function GetPlants(Creds) 

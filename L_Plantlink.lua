@@ -1,8 +1,9 @@
 	local PLUGIN_VERSION = "1.72"
---	local PL = {}
+	local PL = {}
 --	local PL.jsonlua = "dkjson.lua"
 --      local json = require("dkjson")
 	Creds = nil
+
 	function GetPlants(Creds) 
 		local SVCID = "urn:airedalez-net:serviceId:PlantLink"
 		local respbody = {}
@@ -49,14 +50,7 @@
 		luup.log("Data Filled")
 		end
 	end
-
-	function writetofile (filename,package)
-	  local f = assert(io.open(filename, "w"))
-	  local t = f:write(package)
-	  f:close()
-	  return t    
-	end	
-
+	
 	function FillData()
 		local DayOWeek = {"Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"}
 		local Months = {"January","February","March","April","May","June","July","August","September","October","November","December"}

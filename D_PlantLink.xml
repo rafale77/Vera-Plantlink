@@ -7,7 +7,7 @@
 	<device>
 		<handleChildren>0</handleChildren>
 		<deviceType>urn:schemas-airedalez-net:device:PlantLink:1</deviceType>
-		<staticJson>D_PlantLink.json</staticJson>
+		<staticJson>D_PlantLinkUI7.json</staticJson>
 		<serviceList>
 		<service>
 			<serviceType>urn:schemas-airedalez-net:service:PlantLink:1</serviceType>

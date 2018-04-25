@@ -1,8 +1,8 @@
 {
-    "default_icon": "http://www.airedalez.net/wordpress/wp-content/uploads/2015/05/leaf_vector_test.png",
+    "default_icon": "leaf_vector_test.png",
     "state_icons": [
         {
-            "img": "http://www.airedalez.net/wordpress/wp-content/uploads/2015/05/overwater.png",
+            "img": "overwater.png",
             "conditions": [
                 {
                     "service": "urn:airedalez-net:serviceId:PlantLink",
@@ -14,7 +14,7 @@
             ]
         },
         {
-            "img": "http://www.airedalez.net/wordpress/wp-content/uploads/2015/05/underwatered.png",
+            "img": "underwatered.png",
             "conditions": [
                 {
                     "service": "urn:airedalez-net:serviceId:PlantLink",
@@ -26,7 +26,7 @@
             ]
         },
         {
-            "img": "http://www.airedalez.net/wordpress/wp-content/uploads/2015/05/leaf_vector_test.png",
+            "img": "leaf_vector_test.png",
             "conditions": [
                 {
                     "service": "urn:airedalez-net:serviceId:PlantLink",

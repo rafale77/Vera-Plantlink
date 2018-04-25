@@ -1,21 +1,14 @@
 	local PLUGIN_VERSION = "1.72"
-	PL = {}
-	PL.jsonlua = "dkjson.lua"
-
+--	local PL = {}
+--	local PL.jsonlua = "dkjson.lua"
+--      local json = require("dkjson")
 	Creds = nil
 	function GetPlants(Creds) 
 		local SVCID = "urn:airedalez-net:serviceId:PlantLink"
 		local respbody = {}
 		local ltn12 = require("ltn12")
 		local https = require("ssl.https")
-		local ui7Check = luup.variable_get(SVCID, "UI7Check", lul_device) or ""
-		if ui7Check == "false" then
-			luup.log("Using net json parser")
-			json = require("json")
-		elseif ui7Check == "true" then
-			luup.log("Using built in json parser")
-			json = require("dkjson")
-		end
+		local json = require("dkjson")
 		myheaders={
 		["Authorization"]=Creds,
 		["X-Mashape-Key"]="Fk7DqcJC0qmshmBnc27cqkiA4netp1YTZ80jsnn6inwQ5Sgo2A",
@@ -56,29 +49,14 @@
 		luup.log("Data Filled")
 		end
 	end
-	
+
 	function writetofile (filename,package)
 	  local f = assert(io.open(filename, "w"))
 	  local t = f:write(package)
 	  f:close()
 	  return t    
 	end	
-	
-	function getfile(filename,url)
-		package.loaded.http = nil
-    		local http = require("socket.http")
-    		http.TIMEOUT = 30
-    		local page, code = http.request(url)
-    		package.loaded.http = nil
-    		if (code == 200) then
-      			local _ = writetofile(filename,page)
-      			return true
-    		else
-      			return false
-    		end
-	end
 
-	
 	function FillData()
 		local DayOWeek = {"Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"}
 		local Months = {"January","February","March","April","May","June","July","August","September","October","November","December"}
@@ -143,13 +121,13 @@
 	function DetermineWaterStatus(upper,lower,current,SVCID,k)
 		if (upper ~= nil) and (lower ~= nil) and (current ~= nil) then
 		luup.log(upper .. " " .. lower .. " " .. current)
-		if (current &lt; upper) and (current &gt; lower) then
+		if (current <= upper) and (current >= lower) then
 			luup.variable_set(SVCID,"Status","Just Right",k)
 			luup.variable_set(SVCID,"PLIcon","50",k)
-		elseif (current &gt; upper) then
+		elseif (current > upper) then
 			luup.variable_set(SVCID,"Status","Too Wet",k)
 			luup.variable_set(SVCID,"PLIcon","0",k)		
-		elseif (current &lt; lower) then
+		elseif (current < lower) then
 			luup.variable_set(SVCID,"Status","Too Dry",k)
 			luup.variable_set(SVCID,"PLIcon","100",k)
 		else
@@ -158,22 +136,6 @@
 		end
 		else
 		luup.variable_set(SVCID,"Status","No Data",k)
-		end
-	end
-	
-	function versionCheck(SVCID,lul_device)
-		local ui7Check = luup.variable_get(SVCID, "UI7Check", lul_device) or ""
-		if ui7Check == "" then
-			luup.variable_set(SVCID, "UI7Check", "false", lul_device)
-			ui7Check = "false"
-		end
-		if ui7Check == "false" then
-			CheckForJSONParser()
-		end
-		if( luup.version_branch == 1 and luup.version_major == 7) then
-			luup.variable_set(SVCID, "UI7Check", "true", lul_device)
-			luup.attr_set("device_json", "D_PlantLink_UI7.json", lul_device)
-			return
 		end
 	end
 

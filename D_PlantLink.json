@@ -1,0 +1,418 @@
+{
+    "flashicon": "http://www.airedalez.net/wordpress/wp-content/uploads/2015/05/leaf_vector_test.png",
+    "imgIconBody": "",
+    "imgIconDimmable": "",
+    "imgIconTurnable": "",
+    "imgIconMin": "",
+    "imgIconMax": "",
+    "halloIconsDir": "pics/hallo",
+    "state_icons": [
+      "plantlink_0.png",
+        "plantlink_50.png",
+        "plantlink_100.png",
+        {
+            "img": "http://www.airedalez.net/wordpress/wp-content/uploads/2015/06/plantlink_0.png",
+            "conditions": [
+                {
+                    "service": "urn:airedalez-net:serviceId:PlantLink",
+                    "variable": "PLIcon",
+                    "operator": "==",
+                    "value": 0
+                }
+            ]
+        },
+        {
+            "img": "http://www.airedalez.net/wordpress/wp-content/uploads/2015/06/plantlink_50.png",
+            "conditions": [
+                {
+                    "service": "urn:airedalez-net:serviceId:PlantLink",
+                    "variable": "PLIcon",
+                    "operator": "==",
+                    "value": 50
+                }
+            ]
+        },
+        {
+            "img": "http://www.airedalez.net/wordpress/wp-content/uploads/2015/06/plantlink_100.png",
+            "conditions": [
+                {
+                    "service": "urn:airedalez-net:serviceId:PlantLink",
+                    "variable": "PLIcon",
+                    "operator": "==",
+                    "value": 100
+                }
+            ]
+        }
+    ],
+    "x": "3",
+    "y": "4",
+    "inScene": "1",
+    "DisplayStatus": {
+        "Service": "urn:airedalez-net:serviceId:PlantLink",
+        "Variable": "Status",
+    },
+    "doc_url": {
+        "doc_language": 1,
+        "doc_manual": 1,
+        "doc_version": 1,
+        "doc_platform": 0,
+        "doc_page": ""
+    },
+    "ToggleButton": 1,
+    "Tabs": [
+        {
+            "Label": {
+                "lang_tag": "tabname_control",
+                "text": "Control"
+            },
+            "Position": "0",
+            "TabType": "flash",
+            "ControlGroup": [
+                {
+                    "id": "1",
+                    "isSingle": "1",
+                    "scenegroup": "1"
+                },
+                {
+                    "id": "2",
+                    "isSingle": "1",
+                    "scenegroup": "1"
+                }
+            ],
+            "SceneGroup": [
+                {
+                    "id": "1",
+                    "top": "2",
+                    "left": "0",
+                    "x": "2",
+                    "y": "1"
+                }
+            ],
+            "Control": [
+                {
+                    "ControlGroup": "1",
+                    "ControlType": "label",
+                    "top": "0",
+                    "left": "-0.1",
+                    "x": "5",
+                    "text_align": "left",
+                    "Label": {
+                        "lang_tag": "ui7_plantname",
+                        "text": "Water Level: "
+                    },
+                    "Display": {
+                        "Top": 20,
+                        "Left": 20,
+                        "Width": 50,
+                        "Height": 20
+                    }
+                },
+                {
+                    "ControlGroup": "1",
+                    "ControlType": "variable",
+                    "top": "0",
+                    "left": "0.8",
+                    "x": "4",
+                    "text_align": "left",
+                    "Display": {
+                        "Service": "urn:airedalez-net:serviceId:PlantLink",
+                        "Variable": "Status",
+                        "Top": 20,
+                        "Left": 125,
+                        "Width": 75,
+                        "Height": 20
+                    }
+                },
+                {
+                    "ControlGroup": 1,
+                    "ControlType": "line_break"
+                },
+                {
+                    "ControlGroup": "1",
+                    "ControlType": "label",
+                    "top": "1",
+                    "left": "-0.1",
+                    "x": "5",
+                    "text_align": "left",
+                    "Label": {
+                        "lang_tag": "ui7_moisture",
+                        "text": "Water Next: "
+                    },
+                    "Display": {
+                        "Top": 40,
+                        "Left": 20,
+                        "Width": 50,
+                        "Height": 20
+                    }
+                },
+                {
+                    "ControlGroup": "1",
+                    "ControlType": "variable",
+                    "top": "1",
+                    "left": "0.7",
+                    "Display": {
+                        "Service": "urn:airedalez-net:serviceId:PlantLink",
+                        "Variable": "WaterDay",
+                        "Top": 40,
+                        "Left": 125,
+                        "Width": 75,
+                        "Height": 20
+                    }
+                },
+                {
+                    "ControlType": "label",
+                    "Label": {
+                        "lang_tag": "plant_type",
+                        "text": "Plant Name:"
+                    },
+                    "Display": {
+                        "Top": 0,
+                        "Left": 20,
+                        "Width": 50,
+                        "Height": 20
+                    }
+                },
+                {
+                    "ControlType": "variable",
+                    "Display": {
+                        "Service": "urn:airedalez-net:serviceId:PlantLink",
+                        "Variable": "PlantName",
+                        "Top": 0,
+                        "Left": 125,
+                        "Width": 75,
+                        "Height": 20
+                    }
+                },
+                {
+                    "ControlType": "label",
+                    "Label": {
+                        "lang_tag": "plant_type",
+                        "text": "Moisture Level:"
+                    },
+                    "Display": {
+                        "Top": 60,
+                        "Left": 20,
+                        "Width": 50,
+                        "Height": 20
+                    }
+                },
+                {
+                    "ControlType": "variable",
+                    "Display": {
+                        "Service": "urn:airedalez-net:serviceId:PlantLink",
+                        "Variable": "MoisturePercent",
+                        "Top": 60,
+                        "Left": 125,
+                        "Width": 75,
+                        "Height": 20
+                    }
+                },
+                {
+                    "ControlType": "label",
+                    "top": "0",
+                    "left": "0",
+                    "Label": {
+                        "lang_tag": "plant_username",
+                        "text": "Username: "
+                    },
+                    "Display": {
+                        "Top": 80,
+                        "Left": 20,
+                        "Width": 75,
+                        "Height": 20
+                    }
+                },
+                {
+                    "ControlType": "input",
+          "ID": "PL_User",
+                    "Display": {
+                        "Top": 80,
+                        "Left": 125,
+                        "Width": 150,
+                        "Height": 20
+                    }
+              },
+                              {
+                    "ControlType": "label",
+                    "top": "0",
+                    "left": "0",
+                    "Label": {
+                        "lang_tag": "plant_pass",
+                        "text": "Password: "
+                    },
+                    "Display": {
+                        "Top": 100,
+                        "Left": 20,
+                        "Width": 75,
+                        "Height": 20
+                    }
+                },
+                {
+                    "ControlType": "input",
+          "ID": "PL_Pass",
+                    "Display": {
+                        "Top": 100,
+                        "Left": 125,
+                        "Width": 150,
+                        "Height": 20
+                    }
+              },
+                {
+                    "ControlType": "button",
+                    "Label": {
+                        "lang_tag": "cmd_set",
+                        "text": "Set Credentials"
+                    },
+                    "Display": {
+                        "Top": 125,
+                        "Left": 150,
+                        "Width": 100,
+                        "Height": 20
+                    },
+                    "Command": {
+                        "Service": "urn:airedalez-net:serviceId:PlantLink",
+                        "Action": "SetCreds",
+                        "Parameters": [
+                            {
+                                "Name": "PL_Pass",
+                                "ID": "PL_Pass"
+                            },
+                            {
+                              "Name": "PL_User",
+                              "ID": "PL_User",
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "Label": {
+                "lang_tag": "settings",
+                "text": "Settings"
+            },
+            "Position": "1",
+            "TabType": "javascript",
+            "ScriptName": "shared.js",
+            "Function": "simple_device"
+        },
+        {
+            "Label": {
+                "lang_tag": "advanced",
+                "text": "Advanced"
+            },
+            "Position": "2",
+            "TabType": "javascript",
+            "ScriptName": "shared.js",
+            "Function": "advanced_device"
+        },
+        {
+            "Label": {
+                "lang_tag": "device_options",
+                "text": "Device Options"
+            },
+            "Position": "3",
+            "TabType": "javascript",
+            "ScriptName": "shared.js",
+            "Function": "device_zwave_options"
+        },
+        {
+            "Label": {
+                "lang_tag": "logs",
+                "text": "Logs"
+            },
+            "Position": "4",
+            "TabType": "javascript",
+            "ScriptName": "shared.js",
+            "Function": "device_logs"
+        },
+        {
+            "Label": {
+                "lang_tag": "notifications",
+                "text": "Notifications"
+            },
+            "Position": "5",
+            "TabType": "javascript",
+            "ScriptName": "shared.js",
+            "Function": "device_notifications"
+        }
+    ],
+    "sceneList": {
+        "group_1": {
+            "cmd_1": {
+                "label": "ON",
+                "serviceId": "urn:airedalez-net:serviceId:PlantLink",
+                "action": "SetTarget",
+                "arguments": {
+                    "newTargetValue": "1"
+                },
+                "display": {
+                    "service": "urn:airedalez-net:serviceId:PlantLink",
+                    "variable": "Status",
+                    "value": "1"
+                }
+            },
+            "cmd_2": {
+                "label": "OFF",
+                "serviceId": "urn:airedalez-net:serviceId:PlantLink",
+                "action": "SetTarget",
+                "arguments": {
+                    "newTargetValue": "0"
+                },
+                "display": {
+                    "service": "urn:airedalez-net:serviceId:PlantLink",
+                    "variable": "Status",
+                    "value": "0"
+                }
+            }
+        }
+    },
+    "eventList2": [
+        {
+            "id": 1,
+            "label": {
+                "lang_tag": "moisture_below_minimum",
+                "text": "Moisture below minimum"
+            },
+            "serviceId": "urn:airedalez-net:serviceId:PlantLink",
+            "argumentList": [
+                {
+                    "id": 1,
+                    "dataType": "ui4",
+                    "name": "Moisture",
+                    "comparisson": "<",
+                    "prefix": "Moisture: ",
+                    "suffix": "",
+                    "HumanFriendlyText": {
+                        "lang_tag": "moisture_below_minimum",
+                        "text": "Moisture for _DEVICE_NAME_ went below _ARGUMENT_VALUE_"
+                    }
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "label": {
+                "lang_tag": "moisture_above_maximum",
+                "text": "Moisture above maximum"
+            },
+            "serviceId": "urn:airedalez-net:serviceId:PlantLink",
+            "argumentList": [
+                {
+                    "id": 1,
+                    "dataType": "ui4",
+                    "name": "Moisture",
+                    "comparisson": ">",
+                    "prefix": "Moisture: ",
+                    "suffix": "",
+                    "HumanFriendlyText": {
+                        "lang_tag": "moisture_above_maximum",
+                        "text": "Moisture for _DEVICE_NAME_ went above _ARGUMENT_VALUE_"
+                    }
+                }
+            ]
+        }
+    ],
+    "DeviceType": "urn:schemas-airedalez-net:device:PlantLink:1",
+    "device_type": "urn:schemas-airedalez-net:device:PlantLink:1"
+}

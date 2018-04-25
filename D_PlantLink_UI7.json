@@ -1,0 +1,402 @@
+{
+    "default_icon": "http://www.airedalez.net/wordpress/wp-content/uploads/2015/05/leaf_vector_test.png",
+    "state_icons": [
+        {
+            "img": "http://www.airedalez.net/wordpress/wp-content/uploads/2015/05/overwater.png",
+            "conditions": [
+                {
+                    "service": "urn:airedalez-net:serviceId:PlantLink",
+                    "variable": "Status",
+                    "operator": "==",
+                    "value": "Too Wet",
+                    "subcategory_num": 0
+                }
+            ]
+        },
+        {
+            "img": "http://www.airedalez.net/wordpress/wp-content/uploads/2015/05/underwatered.png",
+            "conditions": [
+                {
+                    "service": "urn:airedalez-net:serviceId:PlantLink",
+                    "variable": "Status",
+                    "operator": "==",
+                    "value": "Too Dry",
+                    "subcategory_num": 0
+                }
+            ]
+        },
+        {
+            "img": "http://www.airedalez.net/wordpress/wp-content/uploads/2015/05/leaf_vector_test.png",
+            "conditions": [
+                {
+                    "service": "urn:airedalez-net:serviceId:PlantLink",
+                    "variable": "Status",
+                    "operator": "==",
+                    "value": "Just Right",
+                    "subcategory_num": 0
+                }
+            ]
+        }
+    ],
+    "x": "2",
+    "y": "3",
+    "inScene": "0",
+    "ToggleButton": 1,
+    "Tabs": [
+        {
+            "Label": {
+                "lang_tag": "ui7_tabname_control",
+                "text": "Control"
+            },
+            "Position": "0",
+            "TabType": "flash",
+            "top_navigation_tab": 1,
+            "SceneGroup": [
+                {
+                    "id": "1",
+                    "top": "0",
+                    "left": "0",
+                    "x": "1",
+                    "y": "2"
+                }
+            ],
+            "ControlGroup": [
+                {
+                    "id": "1",
+                    "scenegroup": "1"
+                }
+            ],
+
+            "Control": [
+                {
+                	"HorizontalMultiplier": "2",
+                    "ControlGroup": 1,
+                    "ControlType": "label",
+                    "top": "0",
+                    "left": "0",
+                    "Label": {
+                        "lang_tag": "ui7_plantname",
+                        "text": "Water Level: "
+                    },
+                    "Display": {
+                        "Top": 20,
+                        "Left": 20,
+                        "Width": 50,
+                        "Height": 20
+                    }
+                },
+                {
+                    "ControlGroup": 1,
+                    "ControlType": "variable",
+                    "top": "0",
+                    "left": "0",
+                    "Display": {
+                        "Service": "urn:airedalez-net:serviceId:PlantLink",
+                        "Variable": "Status",
+                        "Top": 20,
+                        "Left": 125,
+                        "Width": 75,
+                        "Height": 20
+                    }
+                },
+                {
+                    "ControlGroup": 1,
+                    "ControlType": "line_break"
+                },
+                {
+                    "ControlGroup": 1,
+                    "ControlType": "label",
+                    "top": "0",
+                    "left": "0",
+                    "Label": {
+                        "lang_tag": "ui7_moisture",
+                        "text": "Water Next: "
+                    },
+                    "Display": {
+                        "Top": 40,
+                        "Left": 20,
+                        "Width": 50,
+                        "Height": 20
+                    }
+                },
+                {
+                    "ControlGroup": 1,
+                    "ControlType": "variable",
+                    "top": "0",
+                    "left": "0",
+                    "Display": {
+                        "Service": "urn:airedalez-net:serviceId:PlantLink",
+                        "Variable": "WaterDay",
+                        "Top": 40,
+                        "Left": 125,
+                        "Width": 75,
+                        "Height": 20
+                    }
+                },
+                {
+                    "ControlType": "label",
+                    "Label": {
+                        "lang_tag": "plant_type",
+                        "text": "Plant Name:"
+                    },
+                    "Display": {
+                        "Top": 0,
+                        "Left": 20,
+                        "Width": 50,
+                        "Height": 20
+                    }
+                },
+                {
+                    "ControlType": "variable",
+                    "Display": {
+                        "Service": "urn:airedalez-net:serviceId:PlantLink",
+                        "Variable": "PlantName",
+                        "Top": 0,
+                        "Left": 125,
+                        "Width": 75,
+                        "Height": 20
+                    }
+                },
+                {
+                    "ControlType": "label",
+                    "Label": {
+                        "lang_tag": "plant_type",
+                        "text": "Moisture Level:"
+                    },
+                    "Display": {
+                        "Top": 60,
+                        "Left": 20,
+                        "Width": 50,
+                        "Height": 20
+                    }
+                },
+                {
+                    "ControlType": "variable",
+                    "Display": {
+                        "Service": "urn:airedalez-net:serviceId:PlantLink",
+                        "Variable": "MoisturePercent",
+                        "Top": 60,
+                        "Left": 125,
+                        "Width": 75,
+                        "Height": 20
+                    }
+                },
+                {
+                    "ControlType": "label",
+                    "top": "0",
+                    "left": "0",
+                    "Label": {
+                        "lang_tag": "plant_username",
+                        "text": "Username: "
+                    },
+                    "Display": {
+                        "Top": 80,
+                        "Left": 20,
+                        "Width": 75,
+                        "Height": 20
+                    }
+                },
+                {
+                    "ControlType": "input",
+                    "ID": "PL_User",
+                    "Display": {
+                        "Top": 80,
+                        "Left": 125,
+                        "Width": 150,
+                        "Height": 20
+                    }
+                },
+                {
+                    "ControlType": "label",
+                    "top": "0",
+                    "left": "0",
+                    "Label": {
+                        "lang_tag": "plant_pass",
+                        "text": "Password: "
+                    },
+                    "Display": {
+                        "Top": 100,
+                        "Left": 20,
+                        "Width": 75,
+                        "Height": 20
+                    }
+                },
+                {
+                    "ControlType": "input",
+                    "ID": "PL_Pass",
+                    "Display": {
+                        "Top": 100,
+                        "Left": 125,
+                        "Width": 150,
+                        "Height": 20
+                    }
+                },
+                {
+                    "ControlType": "button",
+                    "Label": {
+                        "lang_tag": "cmd_set",
+                        "text": "Set Credentials"
+                    },
+                    "Display": {
+                        "Top": 125,
+                        "Left": 150,
+                        "Width": 100,
+                        "Height": 20
+                    },
+                    "Command": {
+                        "Service": "urn:airedalez-net:serviceId:PlantLink",
+                        "Action": "SetCreds",
+                        "Parameters": [
+                            {
+                                "Name": "PL_Pass",
+                                "ID": "PL_Pass"
+                            },
+                            {
+                                "Name": "PL_User",
+                                "ID": "PL_User"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "Label": {
+                "lang_tag": "ui7_settings",
+                "text": "Settings"
+            },
+            "Position": "1",
+            "TabType": "javascript",
+            "ScriptName": "shared.js",
+            "Function": "simple_device"
+        },
+        {
+            "Label": {
+                "lang_tag": "ui7_advanced",
+                "text": "Advanced"
+            },
+            "Position": "2",
+            "TabType": "javascript",
+            "ScriptName": "shared.js",
+            "Function": "advanced_device"
+        },
+        {
+            "Label": {
+                "lang_tag": "ui7_device_options",
+                "text": "Device Options"
+            },
+            "Position": "3",
+            "TabType": "javascript",
+            "ScriptName": "shared.js",
+            "Function": "device_zwave_options"
+        },
+        {
+            "Label": {
+                "lang_tag": "ui7_logs",
+                "text": "Logs"
+            },
+            "Position": "4",
+            "TabType": "javascript",
+            "ScriptName": "shared.js",
+            "Function": "device_logs"
+        },
+        {
+            "Label": {
+                "lang_tag": "ui7_notifications",
+                "text": "Notifications"
+            },
+            "Position": "5",
+            "TabType": "javascript",
+            "ScriptName": "shared.js",
+            "Function": "device_notifications"
+        },
+        {
+            "Label": {
+                "lang_tag": "ui7_device_scenes",
+                "text": "Scenes"
+            },
+            "Position": "6",
+            "TabType": "javascript",
+            "ScriptName": "shared.js",
+            "Function": "device_scenes"
+        }
+    ],
+    "eventList2": [
+        {
+            "id": 1,
+            "label": {
+                "lang_tag": "moisture_below_minimum",
+                "text": "Moisture below minimum"
+            },
+            "serviceId": "urn:airedalez-net:serviceId:PlantLink",
+            "argumentList": [
+                {
+                    "id": 1,
+                    "dataType": "ui4",
+                    "name": "Moisture",
+                    "comparisson": "<",
+                    "prefix": "Moisture: ",
+                    "suffix": "",
+                    "HumanFriendlyText": {
+                        "lang_tag": "moisture_below_minimum",
+                        "text": "Moisture for _DEVICE_NAME_ went below _ARGUMENT_VALUE_"
+                    }
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "label": {
+                "lang_tag": "moisture_above_maximum",
+                "text": "Moisture above maximum"
+            },
+            "serviceId": "urn:airedalez-net:serviceId:PlantLink",
+            "argumentList": [
+                {
+                    "id": 1,
+                    "dataType": "ui4",
+                    "name": "Moisture",
+                    "comparisson": ">",
+                    "prefix": "Moisture: ",
+                    "suffix": "",
+                    "HumanFriendlyText": {
+                        "lang_tag": "moisture_above_maximum",
+                        "text": "Moisture for _DEVICE_NAME_ went above _ARGUMENT_VALUE_"
+                    }
+                }
+            ]
+        },
+  	{
+            "id": 3,
+            "label": {
+                "lang_tag": "ui7_battery_level_goes_below",
+                "text": "Battery level goes below"
+            },
+            "serviceId": "urn:micasaverde-com:serviceId:HaDevice1",
+            "argumentList": [
+                {
+                    "id": 1,
+                    "prefix": {
+                        "lang_tag": "ui7_Level",
+                        "text": "Level"
+                    },
+                    "dataType": "i4",
+                    "name": "BatteryLevel",
+                    "comparisson": "<",
+                    "minValue": "1",
+                    "maxValue": "100",
+                    "suffix": {
+                        "lang_tag": "ui7_percent_sign",
+                        "text": "%"
+                    },
+                    "HumanFriendlyText": {
+                        "lang_tag": "ui7_hft_battery_level_goes_below",
+                        "text": "Battery level for _DEVICE_NAME_ goes below _ARGUMENT_VALUE_%"
+                    }
+                }
+            ]
+        }
+    ],
+    "DeviceType": "urn:schemas-airedalez-net:device:PlantLink:1",
+    "device_type": "urn:schemas-airedalez-net:device:PlantLink:1"
+}

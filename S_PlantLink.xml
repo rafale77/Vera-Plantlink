@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<scpd xmlns="urn:schemas-upnp-org:service-1-0">
+  <specVersion>
+    <major>1</major>
+    <minor>0</minor>
+  </specVersion>
+  <serviceStateTable>
+    <stateVariable sendEvents="no">
+      <name>Username</name>
+      <dataType>string</dataType>
+      <defaultValue>Email Address</defaultValue>
+      <shortCode>username</shortCode>
+    </stateVariable>
+    <stateVariable sendEvents="no">
+      <name>Password</name>
+      <dataType>string</dataType>
+      <defaultValue>Enter One</defaultValue>
+      <shortCode>password</shortCode>
+    </stateVariable>
+    <stateVariable sendEvents="no">
+      <name>PlantName</name>
+      <dataType>string</dataType>
+      <shortCode>plantname</shortCode>
+    </stateVariable>
+    <stateVariable sendEvents="no">
+      <name>MaxMoisture</name>
+      <dataType>ui4</dataType>
+      <shortCode>maxmoisture</shortCode>
+    </stateVariable>
+    <stateVariable sendEvents="no">
+      <name>MinMoisture</name>
+      <dataType>ui4</dataType>
+      <shortCode>minmoisture</shortCode>
+    </stateVariable>
+    <stateVariable sendEvents="no">
+      <name>Moisture</name>
+      <dataType>ui4</dataType>
+      <shortCode>moisture</shortCode>
+    </stateVariable>
+    <stateVariable sendEvents="no">
+      <name>MoisturePercent</name>
+      <dataType>ui4</dataType>
+      <shortCode>moisturepercent</shortCode>
+    </stateVariable>
+    <stateVariable sendEvents="no">
+      <name>Status</name>
+      <dataType>string</dataType>
+      <shortCode>status</shortCode>
+    </stateVariable>
+    <stateVariable sendEvents="no">
+      <name>WaterDay</name>
+      <dataType>string</dataType>
+      <shortCode>waterday</shortCode>
+    </stateVariable>
+    <stateVariable sendEvents="no">
+      <name>PLIcon</name>
+      <dataType>ui4</dataType>
+      <shortCode>imgicon</shortCode>
+    </stateVariable>
+  </serviceStateTable>
+  <actionList>
+    <action>
+      <name>SetCreds</name>
+      <argumentList>
+      	<argument>
+      		<name>PL_User</name>
+      		<direction>in</direction>
+      	</argument>
+      	<argument>
+      		<name>PL_Pass</name>
+      		<direction>in</direction>
+      	</argument>
+      </argumentList>
+    </action>
+  </actionList>
+</scpd>
+

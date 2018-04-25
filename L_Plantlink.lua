@@ -41,7 +41,8 @@
     			for i = 2,TotalPlants do
       				s = string.format("%02d", i)
         			luup.log("Adding Plant " .. s)
-        			luup.chdev.append(lul_device, child_devices, s, myPlants[i].name, "urn:schemas-airedalez-net:device:PlantLink:1","D_PlantLink.xml", "", "", false)
+				luup.create_device("urn:schemas-airedalez-net:device:PlantLink:1", lul_device, myPlants[i].name, "D_PlantLink.xml", "I_file", "ip", "mac", false, false, lul_device, 0, 0,"attributeset,0,"","", false, false)
+--        			luup.chdev.append(lul_device, child_devices, s, myPlants[i].name, "urn:schemas-airedalez-net:device:PlantLink:1","D_PlantLink.xml", "", "", false)
     			end
     			luup.chdev.sync(lul_device, child_devices)
     		end

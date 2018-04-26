@@ -1,7 +1,5 @@
-	local PLUGIN_VERSION = "1.72"
+	local PLUGIN_VERSION = "1.8"
 	local PL = {}
---	local PL.jsonlua = "dkjson.lua"
---      local json = require("dkjson")
 	Creds = nil
 
 	function GetPlants(Creds) 
